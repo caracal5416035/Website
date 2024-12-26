@@ -27,7 +27,19 @@
 
   
     
-      
+        <script>  // Fungsi untuk memeriksa ukuran layar dan melakukan redirect
+  function checkScreenSize() {
+  if (window.innerWidth > 430) {
+  window.location.href = "about:blank"; // URL tujuan
+  }
+  }
+
+  // Panggil fungsi saat ukuran layar berubah
+  window.addEventListener("resize", function() {
+  checkScreenSize();
+  });
+
+</script>
 
       
 
