@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemutar Musik Modern</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #4a90e2, #50e3c2);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .player {
+            width: 90%;
+            max-width: 400px;
+            background: #ffffff;
+            color: #333;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            background: linear-gradient(to right, #4a90e2, #50e3c2);
+            text-align: center;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        audio {
+            width: 90%;
+            margin: 20px 0;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .controls button {
+            background: #4a90e2;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .controls button:hover {
+            background: #50e3c2;
+        }
+
+        .timer {
+            width: 80%;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timer label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .timer input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .playlist {
+            width: 90%;
+            max-height: 200px;
+            overflow-y: auto;
+            border-top: 1px solid #ccc;
+            margin-top: 15px;
+        }
+
+        .playlist ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .playlist li {
+            padding: 10px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .playlist li:hover {
+            background: #f9f9f9;
+        }
+
+        .playlist li.current {
+            background: #4a90e2;
+            color: #fff;
+        }
+
+        .playlist li span {
+            font-size: 14px;
+        }
+
+        .playlist li span.time {
+            color: #888;
+        }
+
+        .status {
+            margin: 15px 0;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .status strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="player">
+        <div class="header">Pemutar Musik Modern</div>
+        <audio id="audio" controls></audio>
+        <div class="controls">
+            <button id="prev">❮</button>
+            <button id="next">❯</button>
+        </div>
+        <div class="timer">
+            <label for="timer">Set Timer selesai</label>
+            <input type="time" id="timer" step="1">
+        </div>
+        <button id="setTimer" style="margin-bottom: 20px; background: #50e3c2;">Set Timer</button>
+        <p class="status" id="status">Pilih lagu untuk memulai.</p>
+        <div class="playlist">
+            <ul id="playlist">
+                <!-- Playlist akan di-generate secara dinamis -->
+            </ul>
+        </div>
+    </div>
+    <script>
+        const audio = document.getElementById('audio');
+        const playlistElement = document.getElementById('playlist');
+
+        // Array lagu dengan judul dan file
+        const songs = [
+            { title: "Kembali pulang", file: "kembalipulang.mp3" },
+            { title: "Bukti", file: "bukti.mp3" },
+            { title: "Cari pengganti", file: "caripengganti.mp3" },
+            { title: "harga diriku", file: "hargadiriku.mp3" },
+            { title: "Aku yang malang 4", file: "akuyangmalang4.mp3" },
+            
+        ];
+
+        let currentSongIndex = 0;
+
+        function loadSong(index) {
+            audio.src = songs[index].file;
+            highlightCurrentSong(index);
+        }
+
+        function highlightCurrentSong(index) {
+            const listItems = playlistElement.querySelectorAll("li");
+            listItems.forEach((item, i) => {
+                item.classList.toggle("current", i === index);
+            });
+        }
+
+        function generatePlaylist() {
+            songs.forEach((song, index) => {
+                const li = document.createElement("li");
+                li.textContent = `${index + 1}. ${song.title}`;
+                li.addEventListener("click", () => {
+                    currentSongIndex = index;
+                    loadSong(currentSongIndex);
+                    audio.play();
+                });
+                playlistElement.appendChild(li);
+            });
+        }
+
+        audio.addEventListener("ended", () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadSong(currentSongIndex);
+            audio.play();
+        });
+
+        generatePlaylist();
+        loadSong(currentSongIndex);
+    </script>
+</body>
+</html>
