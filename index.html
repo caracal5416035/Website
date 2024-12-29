@@ -119,7 +119,7 @@
     
       
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://azkaarrodhi.vercel.app/style.css">
   <style>
   * {
     user-select: none !important;
@@ -200,7 +200,17 @@ margin: 0; /* Menghilangkan margin default */
         fill: #000000;
       }        
     
-    
+    @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
     
 
   </style>
@@ -230,6 +240,8 @@ margin: 0; /* Menghilangkan margin default */
       });
     }
   }
+    // script.js
+
   </script>
 
 <body id="user_template" oncontextmenu="return false;" translate="no">
@@ -303,15 +315,26 @@ margin: 0; /* Menghilangkan margin default */
       
       
       <header class="Pt(30px) Pb(24px)">
-        <div class="D(f) Jc(c) Fld(c) Ai(c)">
-          <img loading="eager" class="W(90px) H(90px) Bdrs(100%)" src="https://lysander-frost.github.io/file/profile1.webp" alt="">
+        <div class="D(f) Jc(c) Fld(c) Ai(c)" style="cursor: pointer;" id="">
+          <img loading="eager" class="W(90px) H(90px) Bdrs(100%)" src="https://lysander-frost.github.io/file/profile1.webp" alt="" id="profile-pic">
           <span class="Fz(15px) Fw(700) C(#000000) Mt(10px)" style="color: #000000 !important;">@azkaa</span>
           
             <p class="Maw(504px) Mt(10px) Fz(15px) C(#000000) Ta(c) Px(16px)"
               style="word-wrap: break-word;line-height: 1.2rem;color: #000000;font-family: ;">
                 A junior high school student and a curious learner exploring technology
             </p>   
+          <script>
+          document.getElementById('profile-pic').addEventListener('click', function() {
+    this.classList.add('shake');
+    
+    // Menghapus kelas setelah animasi selesai
+    setTimeout(() => {
+        this.classList.remove('shake');
+    }, 500); // 500ms = durasi animasi
+});
           
+          
+          </script>
            
           <!-- Social Links -->
           
@@ -850,4 +873,4 @@ window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.
     const SHADOW_CLASS = "Bxsh($c1)";
   </script>
 <script async src="https://www.tiktok.com/embed.js"></script>
-            </html>
+</html>
