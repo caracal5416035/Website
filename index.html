@@ -367,7 +367,7 @@ margin: 0; /* Menghilangkan margin default */
 
     clickCount++;
 
-    if (!audioPlayed && clickCount === 7) {
+    if (!audioPlayed && clickCount === 5) {
       // Jika audio belum diputar dan klik mencapai 9 kali
       audio.volume = 0.9; // Volume penuh
       audio.play();
@@ -379,7 +379,7 @@ margin: 0; /* Menghilangkan margin default */
     } else if (audioPlayed) {
       // Jika audio sedang diputar, tambahkan penghitung untuk menghentikan audio
       stopCounter++;
-      if (stopCounter === 7) {
+      if (stopCounter === 5) {
         audio.pause();
         audio.currentTime = 0; // Reset audio ke awal
         audioPlayed = false; // Reset status audio
