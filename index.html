@@ -316,27 +316,95 @@ margin: 0; /* Menghilangkan margin default */
 </div>
       
       
-      <header class="Pt(30px) Pb(24px)">
-        <div class="D(f) Jc(c) Fld(c) Ai(c)" style="cursor: pointer;" id="">
-          <img loading="eager" class="W(90px) H(90px) Bdrs(100%)" src="https://lysander-frost.github.io/file/profile1.webp" alt="" id="profile-pic">
-          <span class="Fz(15px) Fw(700) C(#000000) Mt(10px)" style="color: #000000 !important;">@azkaa</span>
-          
-            <p class="Maw(504px) Mt(10px) Fz(15px) C(#000000) Ta(c) Px(16px)"
-              style="word-wrap: break-word;line-height: 1.2rem;color: #000000;font-family: ;">
-                A junior high school student and a curious learner exploring technology
-            </p>   
-          <script>
-          document.getElementById('profile-pic').addEventListener('click', function() {
+   <header class="Pt(30px) Pb(24px)">
+    <div class="D(f) Jc(c) Fld(c) Ai(c)" style="cursor: pointer;">
+        <img loading="eager" class="W(90px) H(90px) Bdrs(100%)" src="https://lysander-frost.github.io/file/profile1.webp" alt="" id="profile-pic">
+        <span class="Fz(15px) Fw(700) C(#000000) Mt(10px)" style="color: #000000 !important;">@azkaa</span>
+        <p class="Maw(504px) Mt(10px) Fz(15px) C(#000000) Ta(c) Px(16px)"
+            style="word-wrap: break-word;line-height: 1.2rem;color: #000000;font-family: ;">
+            A junior high school student and a curious learner exploring technology
+        </p>
+    </div>
+</header>
+
+<!-- Overlay Alert -->
+<div class="overlay" id="overlay">
+    <div class="alert-box">
+        <div class="alert-header">Perhatian</div>
+        <div class="alert-body">
+            Klik 2 kali lagi untuk memutar sound!
+        </div>
+        <div class="alert-footer">
+            <button id="cancelAlert">Batal</button>
+        </div>
+    </div>
+</div>
+
+<!-- Tambahkan audio -->
+<audio id="sound" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+<style>
+/* Overlay Style */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.alert-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+</style>
+
+<script>
+let clickCount = 0;
+
+// Menangani klik pada gambar profil
+document.getElementById('profile-pic').addEventListener('click', function () {
+    clickCount++;
+
+    // Tambahkan animasi shake
     this.classList.add('shake');
-    
-    // Menghapus kelas setelah animasi selesai
     setTimeout(() => {
         this.classList.remove('shake');
-    }, 500); // 500ms = durasi animasi
+    }, 500);
+
+    // Logika klik ke-7 dan ke-9
+    if (clickCount === 7) {
+        document.getElementById('overlay').classList.add('active'); // Tampilkan alert
+    } else if (clickCount === 9) {
+        const sound = document.getElementById('sound');
+        sound.play(); // Putar sound
+        alert("Sound diputar!");
+    }
 });
-          
-          
-          </script>
+
+// Tombol batal pada alert
+document.getElementById('cancelAlert').addEventListener('click', function () {
+    document.getElementById('overlay').classList.remove('active');
+    clickCount = 0; // Reset hitungan klik
+});
+</script>
            
           <!-- Social Links -->
           
