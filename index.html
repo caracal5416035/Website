@@ -316,7 +316,8 @@ margin: 0; /* Menghilangkan margin default */
 </div>
       
       
-   <header class="Pt(30px) Pb(24px)">
+   
+  <header class="Pt(30px) Pb(24px)">
   <div class="D(f) Jc(c) Fld(c) Ai(c)" style="cursor: pointer;" id="">
     <img loading="eager" class="W(90px) H(90px) Bdrs(100%)" src="https://lysander-frost.github.io/file/profile1.webp" alt="" id="profile-pic">
     <span class="Fz(15px) Fw(700) C(#000000) Mt(10px)" style="color: #000000 !important;">@azkaa</span>
@@ -330,7 +331,6 @@ margin: 0; /* Menghilangkan margin default */
 <div id="alert-box" class="alert">Audio telah diputar</div>
 
 <style>
-  /* Gaya untuk peringatan */
   .alert {
     position: fixed;
     bottom: 20px;
@@ -344,10 +344,9 @@ margin: 0; /* Menghilangkan margin default */
     font-size: 14px;
     opacity: 0;
     transition: opacity 0.5s ease, bottom 0.5s ease;
-    z-index: 1000;
+    z-index: 10000;
   }
 
-  /* Menampilkan peringatan */
   .alert.show {
     opacity: 1;
     bottom: 40px;
@@ -356,39 +355,51 @@ margin: 0; /* Menghilangkan margin default */
 
 <script>
   let clickCount = 0;
+  let audioPlayed = false; // Status apakah audio telah diputar
+  let stopCounter = 0; // Penghitung untuk menghentikan audio
+  const audio = new Audio('bukti.mp3'); // Ganti dengan URL audio Anda
 
   document.getElementById('profile-pic').addEventListener('click', function () {
-    // Menambahkan kelas animasi 'shake'
     this.classList.add('shake');
-
-    // Menghapus kelas animasi setelah selesai
     setTimeout(() => {
       this.classList.remove('shake');
     }, 500);
 
-    // Menambah penghitung klik
     clickCount++;
 
-    if (clickCount === 9) {
-      clickCount = 0; // Reset klik
-
-      // Memutar suara
-      const audio = new Audio('https://www.example.com/sound.mp3'); // Ganti URL dengan file suara Anda
+    if (!audioPlayed && clickCount === 7) {
+      // Jika audio belum diputar dan klik mencapai 9 kali
       audio.volume = 1.0; // Volume penuh
       audio.play();
+      audioPlayed = true;
+      clickCount = 0; // Reset klik
 
       // Menampilkan peringatan
-      const alertBox = document.getElementById('alert-box');
-      alertBox.classList.add('show');
+      showAlert('Audio telah diputar');
+    } else if (audioPlayed) {
+      // Jika audio sedang diputar, tambahkan penghitung untuk menghentikan audio
+      stopCounter++;
+      if (stopCounter === 7) {
+        audio.pause();
+        audio.currentTime = 0; // Reset audio ke awal
+        audioPlayed = false; // Reset status audio
+        stopCounter = 0; // Reset penghitung klik
 
-      // Menghilangkan peringatan setelah 3 detik
-      setTimeout(() => {
-        alertBox.classList.remove('show');
-      }, 3000);
+        // Menampilkan peringatan
+        showAlert('Audio telah berhenti');
+      }
     }
   });
-</script>
 
+  function showAlert(message) {
+    const alertBox = document.getElementById('alert-box');
+    alertBox.textContent = message;
+    alertBox.classList.add('show');
+    setTimeout(() => {
+      alertBox.classList.remove('show');
+    }, 4000);
+  }
+</script>
 
            
           <!-- Social Links -->
