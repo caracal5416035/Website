@@ -303,19 +303,6 @@ margin: 0; /* Menghilangkan margin default */
   </a>
 </ul>
 
-<script>
-  function updateClock() {
-    const clockElement = document.getElementById("digital-clock");
-    const now = new Date();
-    const options = { timeZone: "Asia/Jakarta", hour12: false };
-    const time = now.toLocaleTimeString("id-ID", options);
-    clockElement.textContent = time;
-  }
-
-  // Update the clock every second
-  setInterval(updateClock, 1000);
-  updateClock(); // Initial call to set the time immediately
-</script>
           
           
           
