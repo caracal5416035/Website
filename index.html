@@ -317,152 +317,79 @@ margin: 0; /* Menghilangkan margin default */
       
       
    <header class="Pt(30px) Pb(24px)">
-    <div class="D(f) Jc(c) Fld(c) Ai(c)" style="cursor: pointer;">
-        <img loading="eager" class="W(90px) H(90px) Bdrs(100%)" src="https://lysander-frost.github.io/file/profile1.webp" alt="" id="profile-pic">
-        <span class="Fz(15px) Fw(700) C(#000000) Mt(10px)" style="color: #000000 !important;">@azkaa</span>
-        <p class="Maw(504px) Mt(10px) Fz(15px) C(#000000) Ta(c) Px(16px)"
-            style="word-wrap: break-word;line-height: 1.2rem;color: #000000;font-family: ;">
-            A junior high school student and a curious learner exploring technology
-        </p>
-    </div>
+  <div class="D(f) Jc(c) Fld(c) Ai(c)" style="cursor: pointer;" id="">
+    <img loading="eager" class="W(90px) H(90px) Bdrs(100%)" src="https://lysander-frost.github.io/file/profile1.webp" alt="" id="profile-pic">
+    <span class="Fz(15px) Fw(700) C(#000000) Mt(10px)" style="color: #000000 !important;">@azkaa</span>
+    <p class="Maw(504px) Mt(10px) Fz(15px) C(#000000) Ta(c) Px(16px)" style="word-wrap: break-word;line-height: 1.2rem;color: #000000;font-family: ;">
+      A junior high school student and a curious learner exploring technology
+    </p>
+  </div>
 </header>
 
-<!-- Overlay Alert -->
-<div class="overlay" id="overlay">
-    <div class="alert-box">
-        <div class="alert-header">alert</div>
-        <div class="alert-body">
-            Klik 2 kali lagi untuk memutar sound!
-        </div>
-        <div class="alert-footer">
-            <button id="cancelAlert">Batal</button>
-        </div>
-    </div>
-</div>
-
-<!-- Tambahkan audio -->
-<audio id="sound" src="bukti.mp3"></audio>
+<!-- Kontainer Peringatan -->
+<div id="alert-box" class="alert">Audio telah diputar</div>
 
 <style>
-.overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0.3s, opacity 0.3s;
-    }
+  /* Gaya untuk peringatan */
+  .alert {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.5s ease, bottom 0.5s ease;
+    z-index: 1000;
+  }
 
-    .overlay.active {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .alert-box {
-      z-index: 10000000;
-      user-select: none;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      max-width: 80%;
-      padding: 20px;
-      animation: scaleIn 0.2s ease;
-    }
-
-    @keyframes scaleIn {
-      from {
-        transform: scale(-3);
-        opacity: 1;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    .alert-header {
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-      font-weight: 500;
-      margin-bottom: 10px;
-      color: #202124;
-    }
-
-    .alert-body {
-      font-family: Arial, sans-serif;
-      font-size: 14.5px;
-      color: #5f6368;
-      margin-bottom: 20px;
-    }
-
-    .alert-footer {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-    }
-
-    .alert-footer button {
-      background-color: #1c86ee;
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-weight: 400px;
-      font-size: 14px;
-      border: none;
-      -webkit-tap-highlight-color: transparent;
-      cursor: pointer;
-    }
-
-    .alert-footer button.primary {
-      background-color: #1a73e8;
-      color: white;
-    }
-
-    .alert-footer button:hover {
-      background-color: #e8eaed;
-    }
-
-    .alert-footer button.primary:hover {
-      background-color: #1669c1;
+  /* Menampilkan peringatan */
+  .alert.show {
+    opacity: 1;
+    bottom: 40px;
   }
 </style>
 
 <script>
-let clickCount = 0;
+  let clickCount = 0;
 
-// Menangani klik pada gambar profil
-document.getElementById('profile-pic').addEventListener('click', function () {
-    clickCount++;
-
-    // Tambahkan animasi shake
+  document.getElementById('profile-pic').addEventListener('click', function () {
+    // Menambahkan kelas animasi 'shake'
     this.classList.add('shake');
+
+    // Menghapus kelas animasi setelah selesai
     setTimeout(() => {
-        this.classList.remove('shake');
+      this.classList.remove('shake');
     }, 500);
 
-    // Logika klik ke-7 dan ke-9
-    if (clickCount === 7) {
-        document.getElementById('overlay').classList.add('active'); // Tampilkan alert
-    } else if (clickCount === 9) {
-        const sound = document.getElementById('sound');
-        sound.play(); // Putar sound
-        alert("Sound diputar!");
-    }
-});
+    // Menambah penghitung klik
+    clickCount++;
 
-// Tombol batal pada alert
-document.getElementById('cancelAlert').addEventListener('click', function () {
-    document.getElementById('overlay').classList.remove('active');
-    clickCount = 0; // Reset hitungan klik
-});
+    if (clickCount === 9) {
+      clickCount = 0; // Reset klik
+
+      // Memutar suara
+      const audio = new Audio('https://www.example.com/sound.mp3'); // Ganti URL dengan file suara Anda
+      audio.volume = 1.0; // Volume penuh
+      audio.play();
+
+      // Menampilkan peringatan
+      const alertBox = document.getElementById('alert-box');
+      alertBox.classList.add('show');
+
+      // Menghilangkan peringatan setelah 3 detik
+      setTimeout(() => {
+        alertBox.classList.remove('show');
+      }, 3000);
+    }
+  });
 </script>
+
+
            
           <!-- Social Links -->
           
