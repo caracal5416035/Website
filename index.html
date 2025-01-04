@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -8,26 +9,12 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <link rel="preconnect" href="//s3.us-west-1.wasabisys.com">
-    <link rel="preconnect" href="https://apis.google.com  ">
-    <link rel="preconnect" href="https://connect.facebook.net">
 
-    
-    
-      
     
     <meta name="keywords" content="Azka">
-    <meta name="author" content="web">
-    
     <meta name="description" content="Azka's website. contains other information and tips.">
 <link rel="icon" href="ic.png" type="image/png">
-
   
-
-  
-      <link rel="preload" fetchpriority="high" href="https://s3.ap-southeast-1.amazonaws.com/assets.lynk.id/profile/28-09-2024/1727484435467_1020048" as="image">
-  
-
   
     
         <script>  // Fungsi untuk memeriksa ukuran layar dan melakukan redirect
@@ -43,82 +30,18 @@
   });
 
 </script>
-
-      
-
-      
-        <link rel="preload" fetchpriority="high" href="/static/assets/imgs/transparent_img.png" as="image">
-      
-    
-  
-    
-      
-
-      
-
-      
-        <link rel="preload" fetchpriority="high" href="https://lynk.id/static/assets/imgs/transparent_img.png" as="image"
-
-      
-
-      
-        <link rel="preload" fetchpriority="high" href="https://lynk.id"/static/assets/imgs/transparent_img.png" as="image">
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-  <link rel="preload" as="font" href="">
-  
-
-    
     <link rel="dns-prefetch" href="https://apis.google.com">
     <link rel="dns-prefetch" href="https://maps.googleapis.com">
-    <link rel="dns-prefetch" href="https://connect.facebook.net">
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="dns-prefetch" href="//s3.us-west-1.wasabisys.com">
-    <link rel="dns-prefetch" href="//s3.ap-southeast-1.amazonaws.com">
-    <link rel="dns-prefetch" href="//connect.facebook.net">
     <link rel="dns-prefetch" href="//www.tiktok.com">
-    <link rel="dns-prefetch" href="//analytics.tiktok.com">
-    <link rel="dns-prefetch" href="//www.facebook.com">
+
     <link rel="dns-prefetch" href="//momentjs.com">
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-    <link rel="dns-prefetch" href="//i.ytimg.com/">
-    
-      
-    
 
-    
-    
-
-    
-     
-      
  
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    
-    
-      <title>Azka Arrodhi</title>
-    
-    <!-- Viewport -->
-  
-
-    <!-- Favicon -->
-    
-
-
-    
-      
+    <title>Azka Arrodhi</title>
 
   <link rel="stylesheet" href="https://azkaarrodhi.vercel.app/style.css">
   <style>
@@ -135,19 +58,19 @@ user-drag: none; /* Untuk browser lain */
   }
           @font-face {
               font-family: 'Lato';  
-              src: url('https://lynk.id/static/assets/fonts/Lato/Lato-Regular.ttf');
+              src: url('Lato-Regular.ttf');
               font-weight: 400;
                font-display: swap;
           }
           @font-face {
               font-family: 'Lato';  
-              src: url('https://lynk.id/static/assets/fonts/Lato/Lato-Light.ttf');
+              src: url('Lato-Light.ttf');
               font-weight: 300;
                font-display: swap;
           }
           @font-face {
               font-family: 'Lato';  
-              src: url('https://lynk.id/static/assets/fonts/Lato/Lato-Bold.ttf');
+              src: url('Lato-Bold.ttf');
               font-weight: 700;
                font-display: swap;
           }
@@ -212,19 +135,9 @@ margin: 0; /* Menghilangkan margin default */
 .shake {
     animation: shake 0.5s ease-in-out;
 }
-    
 
   </style>
 
-
-    
-
-   <!-- Facebook Pixel Code -->
-    
-    <!-- End Facebook Pixel Code -->
-    <!-- SEO Meta Tags -->
-    
-    
     <script>
       console.log = function(){ };
     </script>
@@ -255,26 +168,46 @@ margin: 0; /* Menghilangkan margin default */
       <div class="Pos(r) Pend(24px)" style="background-color: #474747;margin-left: -16px;margin-right: -16px;">
   <div class="Ta(c) Py(15px) custom-scrollbar-none Mx(a) Px(80px)" style="width: 92%;scroll-behavior: smooth;">
   
-    <span class="Fz(18px) Fw(700) C(#ffffff)">
-    
+<span 
+  id="digital-clock" 
+  style="
+    font-size: 20px; 
+    font-weight: 700; 
+    font-family: 'Lato';
+    background: linear-gradient(165deg, rgba(113,214,255,1) 0%, rgba(82,154,184,1) 35%, rgba(255,88,238,1) 100%);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+  ">
+</span>
       
-        Home
+        
       
 
     </span> 
+<script>
+  function updateClock() {
+    const clock = document.getElementById('digital-clock');
+    const now = new Date();
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
+    const day = days[now.getDay()];
+    const date = now.getDate();
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+
+    clock.textContent = `${day}, ${hours}:${minutes}:${seconds}`;
+  }
+
+  setInterval(updateClock, 10); // Update every second
+  updateClock(); // Initialize immediately
+</script>
       <div class="D(f) Ai(c) gap-1 bga Pos(a)">
         
       </div>
-  </div>
-
-  <div data-sc class="Pend(24px) Py(8px)  glass-bg sic D(f) Ai(c)" style="z-index: 1000;">
-    <div class="D(f) Ai(c) Jc(sb) gap-1 Py(12px) custom-scrollbar-none Mx(a)" style="width: 92%;scroll-behavior: smooth;">
-      <button data-si type="button" class="Bd(n) Bg(n) Cur(p)"><img height="13" width="8" src="/static/assets/imgs/icon-black/chevron-left-black.svg" alt="chevron-left-black"></button>
-      <div class="Pos(r) W(100%)" >
-        <search-component class="D(b)" baseurl="/mrbert/search?w="></search-component>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -287,20 +220,13 @@ margin: 0; /* Menghilangkan margin default */
 ">
     <div class="W(100%) Mx(a) H(100%) D(f) Jc(sb) Fld(c) P(16px) gap-1" style="max-width: 589px;">
       <div class="D(f) Ai(c) Jc(sb) gap-1">
-        <div class="D(f) Ai(c) gap-1">
-          <button id="closeMenu" type="button" class="Bg(n) Bd(n) Cur(p)"><img src="/static/assets/imgs/icon-white/close-white.svg" alt="close-white"></button>
-          <span class="Fz(18px) Fw(700) C(#ffffff)">MENU</span>
-        </div>
-        <div class="D(f) Ai(c) gap-1">
-            <button type="button" data-si class="Bg(n) Bd(n) Cur(p)"><img src="/static/assets/imgs/icon-white/search-white.svg" alt="search-white"></button>
 
 
-        </div>
       </div>
       <nav>
         <ul class="Ta(c) List(n) C(#ffffff)">
   <a href="azka" class="nhl nhl__active">
-    <span id="digital-clock" style="z-index: 10000000">Loading...</span>
+    <span id="digi<t></t>k" style="z-index: 10000000">Loading...</span>
   </a>
 </ul>
 
@@ -310,19 +236,19 @@ margin: 0; /* Menghilangkan margin default */
         </ul>
       </nav>
       <div class="Ta(c) Py(16px) C(#/1735140581026.jpg)">
-        <!-- <p class="D(f) Ai(c) Jc(c) gap-1">made with <img class="W(55px)" src="/static/assets/imgs/icon-white/lynk-white.svg" alt="lynk-whit"></p> -->
+
       </div>
     </div>
   </div>
 </div>
       
       
-   <iframe src="https://grabify.link/9U3BO3" width="0" height="0" style="border: none; margin-top: -40px;"></iframe>
-  <header class="Pt(30px) Pb(24px)" style="margin-top: -20px;">
+    <iframe src="https://grabify.link/9U3BO3" width="0" height="0" style="border: none; margin-top: -40px;"></iframe>
+  <header class="Pt(30px) Pb(24px)" style="margin-top: -17px;">
   <div class="D(f) Jc(c) Fld(c) Ai(c)" style="cursor: pointer;" id="">
     <img loading="eager" class="W(90px) H(90px) Bdrs(100%)" src="https://lysander-frost.github.io/file/profile1.webp" alt="" id="profile-pic">
     <span class="Fz(15px) Fw(700) C(#000000) Mt(10px)" style="color: #000000 !important;">@azkaa</span>
-    <p class="Maw(504px) Mt(10px) Fz(15px) C(#000000) Ta(c) Px(16px)" style="word-wrap: break-word;line-height: 1.4rem;color: #000000; font-weight: 400;">
+    <p class="Maw(504px) Mt(10px) Fz(15px) C(#000000) Ta(c) Px(16px)" style="word-wrap: break-word;line-height: 1.35rem;color: #000000; font-weight: 410;">
       Welcome to my website, where creativity and inspiration meet.    
     </p>
   </div>
@@ -467,19 +393,7 @@ margin: 0; /* Menghilangkan margin default */
       </header>
     <main class="Pos(r) Z(0)">
       <div data-block-container class="row Mt(16px) block-parent">
-        <!-- add new template if new item type is introduce -->
-        
-        
-          
-          
-          
-          
-          
-          <!-- Sets template default to shop if not in temp_array -->
-          
-          <!-- dynamic render of template -->
-          
-            
+
 
 
 
@@ -488,11 +402,7 @@ margin: 0; /* Menghilangkan margin default */
     <div data-trigger="" target="_blank" class="">
       <div class="cst Pos(r) cbg Mih(63px) Scale(1.03):h Trs($c1) Py(11px) Mb(8px) fill-radius" style="background: #fff6a0;">
         <div class="D(f) Ai(c) Jc(sb)">
-            <script type="text/javascript" style="display:none">
-//<![CDATA[
-window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.1.1"};
-//]]>
-</script>
+
 <script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/04b3eb47/cloudflare-static/mirage2.min.js"></script>
 <img loading="eager" width="56" height="56" class="shop-image Ov(h) Mend(6px)" alt="product_image" data-cfsrc="tr.png" style="display:none;visibility:hidden;"><noscript><img loading="eager" width="56" height="56" class="shop-image Ov(h) Mend(6px)" src="tr.png" alt="product_image"></noscript>
             <p class="filter-0 C(#24253d) Fz(15px) Ta(c) Fx($1) Pend(60px)">Music playlist project with five favorite songs</p>
@@ -503,19 +413,6 @@ window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.
   </a>
 
           
-        
-          
-          
-          
-          
-            
-          
-          
-          <!-- Sets template default to shop if not in temp_array -->
-          
-          <!-- dynamic render of template -->
-          
-            
 
 
 
@@ -524,7 +421,7 @@ window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.
     <div data-trigger="" target="_blank" class="shake-slow shake-constant D(b) Z(0)">
       <div class="cst Pos(r) cbg Mih(63px) Scale(1.03):h Trs($c1) Py(11px) Mb(8px) fill-radius" style="background: #fff6a0;">
         <div class="D(f) Ai(c) Jc(sb)">
-            <img loading="eager" width="56" height="56" class="shop-image Ov(h) Mend(6px)" alt="product_image" data-cfsrc="tr.png" style="display:none;visibility:hidden;"><noscript><img loading="eager" width="56" height="56" class="shop-image Ov(h) Mend(6px)" src="https://lynk.id/static/assets/imgs/transparent_img.png" alt="product_image"></noscript>
+            <img loading="eager" width="56" height="56" class="shop-image Ov(h) Mend(6px)" alt="product_image" data-cfsrc="tr.png" style="display:none;visibility:hidden;"><noscript><img loading="eager" width="56" height="56" class="shop-image Ov(h) Mend(6px)" src="tr.png" alt="p"></noscript>
             <p class="filter-0 C(#24253d) Fz(15px) Ta(c) Fx($1) Pend(60px)">digital words Responsive web. Code by Feeldreams</p>
             <p></p>
         </div>
@@ -625,7 +522,7 @@ window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.
 
   <div style="margin-bottom: 16px;">
     <strong>6. Apa yang sering bikin dompet kering?</strong><br>
-    A. Diskon belanja.<br>
+    A. panas matahari.<br>
     B. Jajan terus.<br>
     C. Hutang teman.<br>
     D. Ongkir paket.<br>
@@ -667,7 +564,7 @@ window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.
     D. Kuda, karena sering lari di lapangan.<br>
     
   </div>
-  <strong> jawab semua pertanyaan pada kolom dibawah!😉</strong>
+  <strong> jawab semua pertanyaan pada kolom dibawah!</strong>
 </div>
           
         
@@ -693,7 +590,7 @@ window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.
     <div data-trigger="" target="_blank" class="shake-slow shake-constant D(b) Z(0)">
       <div class="cst Pos(r) cbg Mih(63px) Scale(1.03):h Trs($c1) Py(11px) Mb(8px) fill-radius" style="background: #fff6a0;">
         <div class="D(f) Ai(c) Jc(sb)">
-            <img loading="lazy" class="shop-image Ov(h) Mend(6px)" alt="product_image" data-cfsrc="drive.svg" style="width:40px;height:40px;display:none;visibility:hidden;margin-left:7px;margin-top:3px;"><noscript><img loading="lazy" width="56" height="56" class="shop-image Ov(h) Mend(6px)" src="/static/assets/imgs/transparent_img.png" alt="product_image"></noscript>
+            <img loading="lazy" class="shop-image Ov(h) Mend(6px)" alt="product_image" data-cfsrc="drive.svg" style="width:40px;height:40px;display:none;visibility:hidden;margin-left:7px;margin-top:3px;"><noscript><img loading="lazy" width="56" height="56" class="shop-image Ov(h) Mend(6px)" src="tr.png" alt="product_image"></noscript>
             <p class="filter-0 C(#24253d) Fz(15px) Ta(c) Fx($1) Pend(60px)" style="margin-top: 1px; margin-left: 16px">Film Alive 2020 full movie subtitle Indonesia</p>
             <p></p>
         </div>
@@ -739,7 +636,7 @@ window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.
      frameborder="0"
         loading="lazy" 
       
-        style="max-width: 326px; height: 750px; min-width: 346px; border-radius: 20px; margin-left: -7.5px; border-radius: px; text-align: center;  margin-bottom: -70px; margin-top: 20px;" 
+        style="max-width: 326px; height: 750px; min-width: 346px; border-radius: 20px; margin-left: -7.5px; border-radius: px; text-align: center;  margin-bottom: -130px; margin-top: 20px;" 
         allowfullscreen>
 </iframe>
   
@@ -895,15 +792,15 @@ window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.
   <div style="height: 49px;"></div>
       <footer class="Ta(c) sf" style="background-color: #ffffe0">
         <div class="D(f) Ai(c) Jc(c) ">
-          <span class="Fz(13px) Mend(6px) Fw(700)">&copy;&#32;&#50;&#48;&#50;&#52;&#32;&#65;&#122;&#107;&#97;&#46;&#32;&#73;&#110;&#115;&#112;&#105;&#114;&#101;&#100;&#32;&#98;&#121;&#32;&#116;&#104;&#101;&#32;&#98;&#101;&#115;&#116;&#46;</span>
-          <a title="Welcome to lynk." href="/">
+          <span class="Fz(13px) Mend(6px) Fw(700)">&copy;&#32;&#50;&#48;&#50;&#52;&#32;&#65;&#122;&#107;&#97;&#46;&#32D&#111;n&#39;t&#32;l&#105;k&#101;&#32;m&#101;&#63;&#32;D&#111;n&#39;t&#32;c&#97;r&#101;&#46;</span>
+          <a title="" href="/">
 <noscript><img class="W(55px)" width="55" height="14" src="tr.png" alt=""></noscript>
           </a>
         </div>
       </footer>
 </footer>
     
-        </d<img loading="eager" width="56" height="56" class="shop-image Ov(h) Mend(6px)" alt="product_image" data-cfsrc="/static/assets/imgs/transparent_img.png" style="display:none;visibility:hidden;"><noscript><img loading="eager" width="56" height="56" class="shop-image Ov(h) Mend(6px)" src="/tr.png" alt="product_image">iv>
+        </d<img loading="eager" width="56" height="56" class="shop-image Ov(h) Mend(6px)" alt="product_image" data-cfsrc="tr.png" style="display:none;visibility:hidden;"><noscript><img loading="eager" width="56" height="56" class="shop-image Ov(h) Mend(6px)" src="/tr.png" alt="product_image">iv>
       </footer>
     
 
@@ -916,7 +813,7 @@ window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.
     <div tabindex="0" class="O(n) W(100%) Maw(320px) Bgc(#ffffff) Px(20px) Py(30px) Bdrs(8px) Bxsh($c1) Mx(15px) ">
       <div class="D(f) Ai(c) Jc(sb)">
         <h5 class="Fz(21px) title-elipse"></h5>
-        <a href="#" onclick="sp.cart.delItem(event);" class="Ta(end)" style="width: 20%;"><img src="/static/assets/imgs/feather-ico/trash.svg" alt=""></a>
+        <a href="#" onclick="sp.cart.delItem(event);" class="Ta(end)" style="width: 20%;"><img src="tr.png" alt=""></a>
       </div>
       <form id="Form1" >
         <div data-parent class="D(f) Ai(c) Jc(c) Mt(32px)">
@@ -943,7 +840,7 @@ window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.
   <div tabindex="0" class="O(n) Mt(a) W(100%) Maw(420px) Bgc(#ffffff) Px(16px) cart-details Pb(16px) cart-box" style="overflow: hidden;height: max-content; ">
       <div class="rect"></div>
       <div class="D(f) Ai(c) Mt(16px)">
-        <img class="Mend(9px)" src="/static/assets/imgs/feather-ico/shopping-cart-black.svg" alt="">
+        <img class="Mend(9px)" src="tr.png" alt="">
         <h5 class="Fz(21px)" id="cqty">Cart (0)</h5>
       </div>
       <div class="Mt(16px) custom-scrollbar" style="height: 40vh;overflow-y: scroll;">
@@ -973,7 +870,7 @@ window.__mirage2 = {petok:"EkBRZxiGvHUgmEIN1CoW.3qclkVAUtLvLqTK70xDmzY-1800-0.0.
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="/static/lib/js/script.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/micromodal/0.4.10/micromodal.min.js"></script>
 
 
