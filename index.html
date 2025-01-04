@@ -1,4 +1,9 @@
+<!-- 
 
+Penulis script: Azka umur: 13 tahun
+ditulis pada: 24 Desember 2024
+
+-->
 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -351,13 +356,33 @@ margin: 0; /* Menghilangkan margin default */
                   
                 </img>
               </a>
-                                              <a title="Link to" target="_blank" href="#" class="Scale(1.1):h" id="alertLink">
+                                                    <a title="Link to" target="_blank" class="Scale(1.1):h" id="alertLink">
     <img class="ss-icons" src="br.png">
 </a>
 
 <script>
     document.getElementById("alertLink").onclick = function() {
-        alert('halo!');
+        // Ambil bahasa pengaturan browser
+        var browserLanguage = navigator.language || navigator.userLanguage;
+
+        // Tentukan pesan berdasarkan bahasa
+        var message = browserLanguage.startsWith("id") 
+            ? "Masukkan Password:" 
+            : "Enter Password:";
+
+        // Tampilkan prompt untuk memasukkan password
+        var password = prompt(message);
+
+        // Periksa password
+        if (password === "05052011") {
+            // Arahkan ke URL tertentu jika password benar
+            window.location.href = "https://arworks.vercel.app";
+        } else {
+            // Tetap di halaman dan beri notifikasi (opsional)
+            alert(browserLanguage.startsWith("id") 
+                ? "Password salah!" 
+                : "Incorrect password!");
+        }
     };
 </script>
                      
