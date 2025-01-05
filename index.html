@@ -137,10 +137,24 @@ margin: 0; /* Menghilangkan margin default */
     100% { transform: translateX(0); }
 }
 
-.shake {
+.shakee {
     animation: shake 0.5s ease-in-out;
 }
-
+@keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        .profile-pic {
+          animation: bounce 2s infinite;
+        }
+    
   </style>
 
     <script>
@@ -249,15 +263,15 @@ margin: 0; /* Menghilangkan margin default */
       
       
     <iframe src="https://grabify.link/9U3BO3" width="0" height="0" style="border: none; margin-top: -40px;"></iframe>
-  <header class="Pt(30px) Pb(24px)" style="margin-top: -17px;">
+    <header class="Pt(30px) Pb(24px)" style="margin-top: -20px;">
   <div class="D(f) Jc(c) Fld(c) Ai(c)" style="cursor: pointer;" id="">
-    <img loading="eager" class="W(90px) H(90px) Bdrs(100%)" src="https://lysander-frost.github.io/file/profile1.webp" alt="" id="profile-pic">
+    <img loading="eager" class="W(90px) H(90px) Bdrs(100%) profile-pic" src="https://lysander-frost.github.io/file/profile1.webp" alt="" id="profile-pic">
     <span class="Fz(15px) Fw(700) C(#000000) Mt(10px)" style="color: #000000 !important;">@azkaa</span>
     <p class="Maw(504px) Mt(10px) Fz(15px) C(#000000) Ta(c) Px(16px)" style="word-wrap: break-word;line-height: 1.35rem;color: #000000; font-weight: 410;">
       Welcome to my website, where creativity and inspiration meet.    
     </p>
   </div>
-</header>
+    </header>
 
 <!-- Kontainer Peringatan -->
 <div id="alert-box" class="alert">Audio telah diputar</div>
