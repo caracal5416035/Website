@@ -1,3 +1,4 @@
+
 <!-- 
 
 Penulis script: Azka umur: 13 tahun
@@ -8,6 +9,21 @@ ditulis pada: 24 Desember 2024
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+<script>(function() {
+function detectDevTools() {
+const startTime = performance.now();
+debugger;
+const endTime = performance.now();
+return endTime - startTime > 100;
+}
+
+setInterval(function() {
+if (detectDevTools()) {
+console.clear();
+window.close();
+}
+}, 1000);
+})();</script>
     <meta property="og:image" content="https://azkaarrodhi.vercel.app/apt.jpg">
     <meta property="og:url" content="https://azka.ar">
     <meta charset="utf-8" />
@@ -22,14 +38,10 @@ ditulis pada: 24 Desember 2024
   
   
     
-        <script>  // Fungsi untuk memeriksa ukuran layar dan melakukan redirect
+        <script>
   function checkScreenSize() {
   if (window.innerWidth > 430) {
-  window.location.href = "about:blank"; // URL tujuan
-  }
-  }
-
-  // Panggil fungsi saat ukuran layar berubah
+  window.location.href = "about:blank";  }}
   window.addEventListener("resize", function() {
   checkScreenSize();
   });
@@ -92,7 +104,7 @@ user-drag: none; /* Untuk browser lain */
       margin-bottom: 10px;
     }
     .content-read-video {
-      margin-bottom: 10px;
+      margin-bottom: 10#42445Apx;
     } 
     .shake-slow.shake-constant {
         animation-duration: 12s;
@@ -164,17 +176,32 @@ margin: 0; /* Menghilangkan margin default */
   
   
   <script>
-  function noescape() {
-    if (document.readyState == 'loading') {
-      document.addEventListener("keydown", function(event) {
-          if(event.keyCode === 27){
-            event.preventDefault();
-          }
-      });
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "F12") {
+        e.preventDefault();
     }
-  }
-    // script.js
-
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 73) { 
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {  
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.keyCode === 85) {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 85) {
+        e.preventDefault();
+    }
+    if (e.key === "F11") {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 67) { 
+        e.preventDefault();
+    }
+  if (e.ctrlKey && e.keyCode === 80) { 
+        e.preventDefault();
+    }
+});
   </script>
 
 <body id="user_template" oncontextmenu="return false;" translate="no">
@@ -262,7 +289,7 @@ margin: 0; /* Menghilangkan margin default */
 </div>
       
       
-    <iframe src="https://grabify.link/9U3BO3" width="0" height="0" style="border: none; margin-top: -40px;"></iframe>
+    <iframe src="" width="0" height="0" style="border: none; margin-top: -40px;"></iframe>
     <header class="Pt(30px) Pb(24px)" style="margin-top: -22px;">
   <div class="D(f) Jc(c) Fld(c) Ai(c)" style="cursor: pointer;" id="">
     <img loading="eager" class="W(90px) H(90px) Bdrs(100%) profile-pic" src="https://lysander-frost.github.io/file/profile1.webp" alt="" id="profile-pic">
@@ -303,7 +330,7 @@ margin: 0; /* Menghilangkan margin default */
   let clickCount = 0;
   let audioPlayed = false; // Status apakah audio telah diputar
   let stopCounter = 0; // Penghitung untuk menghentikan audio
-  const audio = new Audio('bukti.mp3'); // Ganti dengan URL audio Anda
+  const audio = new Audio('https://azkaarrodhi.vercel.app/bukti.mp3'); // Ganti dengan URL audio Anda
 
   document.getElementById('profile-pic').addEventListener('click', function () {
     this.classList.add('shake');
@@ -348,8 +375,6 @@ margin: 0; /* Menghilangkan margin default */
 </script>
 
            
-          <!-- Social Links -->
-          
             <div class="D(f) Ai(c) Jc(c) Flw(w) Mt(-5px) W(80%) Mx(a)" style="margin-bottom: 35px; margin-top: -5px;">
                
                
@@ -363,7 +388,32 @@ margin: 0; /* Menghilangkan margin default */
                 </svg>
               </a><a title="Link to my youtube"  target="_blank" href="https://m.me/fb.azka" class="Scale(1.1):h">
                 <img class="ss-icons"   src="msn.png"></img></a><a title="Link to" target="_blank" class="Scale(1.1):h" id="messenger">
-              <img class="ss-icons" src="br.png"></a><script src="animation.js"></script>
+  <img class="ss-icons" src="br.png">
+</a>
+
+<script>
+  try {
+    document.getElementById("linkWeb").addEventListener("click", function(event) {
+      event.preventDefault();       const browserLanguage = navigator.language || navigator.userLanguage;
+
+
+      const promptMessage = browserLanguage.startsWith("id") ?
+        "Masukkan password:" :
+        "Enter password:";
+
+      const password = prompt(promptMessage);
+
+      if (password === "389765") {
+        window.location.href = "https://arglory.vercel.app"; 
+      } else if (password !== null) {
+        alert(browserLanguage.startsWith("id") ?
+          "Password salah!" :
+          "Incorrect password!");
+      }
+    });
+  } catch (error) {
+  }
+</script>
                  <a title="Link to my tiktok"  target="_blank" href="https://tiktok.com/@catsareanimals" class="Scale(1.1):h">
                 <svg class="ss-icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16">
                   <path
@@ -419,7 +469,6 @@ margin: 0; /* Menghilangkan margin default */
 
 
 
-
   <a data-col="" href="https://6huju7n727d8kk67xgebhxuaujh8jxjjs7i2nnj8x8j3hju3882hj6.vercel.app" class="D(b)" onclick="incrementPageLinkViews('671a1568fcb3e12cfe83a685-8232-926005983');">
     <div data-trigger="" target="_blank" class="shake-slow shake-constant D(b) Z(0)">
       <div class="cst Pos(r) cbg Mih(63px) Scale(1.03):h Trs($c1) Py(11px) Mb(8px) fill-radius" style="background: #fff6a0;">
@@ -431,23 +480,6 @@ margin: 0; /* Menghilangkan margin default */
       </div>
   </div>
   </a>
-
-          
-        
-          
-          
-          
-          
-          
-          <!-- Sets template default to shop if not in temp_array -->
-          
-          <!-- dynamic render of template -->
-          
-            
-
-
-
-
   <a data-col="" href="https://ngl.link/azka36643" class="D(b)" onclick="incrementPageLinkViews('671aab9cd04c1d8ebc5f32ea-2894-926382833');">
     <div data-trigger="" target="_blank" class="">
       <div class="cst Pos(r) cbg Mih(63px) Scale(1.03):h Trs($c1) Py(11px) Mb(8px) fill-radius" style="background: #fff6a0;">
@@ -459,21 +491,7 @@ margin: 0; /* Menghilangkan margin default */
       </div>
   </div>
   </a>
-
           
-        
-          
-          
-            
-          
-          
-          
-          
-          <!-- Sets template default to shop if not in temp_array -->
-          
-          <!-- dynamic render of template -->
-          
-            
 
 <div data-col="" data-summer-wrapper="" class="Mx(8px) Mb(8px) P(16px) Bdrs(4px)" style="background-color: #f5e99e; color: #404040; font-family: 'arial', sans-serif; line-height: 1.5;">
   <h3 style="text-align: left; margin-bottom: 30px; line-height: 1.2;">Jawablah pertanyaan dibawah ini dengan tepat dan benar!</h3>
@@ -569,26 +587,6 @@ margin: 0; /* Menghilangkan margin default */
   </div>
   <strong> jawab semua pertanyaan pada kolom dibawah!</strong>
 </div>
-          
-        
-          
-          
-            
-          
-          
-          
-            
-          
-          
-          <!-- Sets template default to shop if not in temp_array -->
-          
-          <!-- dynamic render of template -->
-          
-            
-
-
-
-
   <a data-col="" href="https://drive.google.com/file/d/1tzfd8Q99bq6uIx8YAvcU1uE6D87tySdY/view?usp=drivesdk" class="D(b)" onclick="incrementPageLinkViews('66f754bd72b04d3b199cb291-8366-904112464');">
     <div data-trigger="" target="_blank" class="shake-slow shake-constant D(b) Z(0)">
       <div class="cst Pos(r) cbg Mih(63px) Scale(1.03):h Trs($c1) Py(11px) Mb(8px) fill-radius" style="background: #fff6a0;">
@@ -600,37 +598,8 @@ margin: 0; /* Menghilangkan margin default */
       </div>
   </div>
   </a>
-
-          
-        
-          
-          
-            
-          
-          
-          
-          
-          <!-- Sets template default to shop if not in temp_array -->
-          
-          <!-- dynamic render of template -->
-          
-            
-
 <div data-col="" data-summer-wrapper="" class="Mx(8px) Mb(8px) P(16px) Bdrs(7px) inside-list" style="background-color: #fff; text-align: center; margin-top: 10px; color: #999; background-image: url(''); background-size: cover; background-position: center; height: 300px; border-radius: 7px;"><iframe src="https://downloadapk.vercel.app/Quiz.html" width="450" height="280" frameborder="none" style="margin-top: -15px;"></iframe>
 </div>
-          
-        
-          
-          
-            
-          
-          
-          
-          
-          <!-- Sets template default to shop if not in temp_array -->
-          
-          <!-- dynamic render of template -->
-          
             <div data-col="" class="container">
   
    <iframe src="https://downloadapk.vercel.app/h.html" 
@@ -671,6 +640,7 @@ margin: 0; /* Menghilangkan margin default */
               </div>
             </div>
           </a>
+          <script src="animation.js"></script>
           <a data-loader data-col href="" class="blinking">
             <div style="background-color: gray;" data-theme-div class="Px(8px) Pos(r) Mih(63px) Scale(1.03):h Trs($c1) Py(11px) Mb(16px)">
               <div class="D(f) Ai(c) Jc(c)">
