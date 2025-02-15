@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>@azkaarrodhi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f8cdda, #1d2b64);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Poppins', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #333;
+            overflow: hidden;
+        }
+        .container {
+            user-select: none;
+            font-family: 'Poppins', sans-serif;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            height: auto;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        h3 {
+            
+            font-size: 16px;
+            margin-top: 25px;
+            margin-bottom: 5px;
+            color: #e91e63;
+        }
+        .info-container {
+             font-family: 'Poppins', serif;
+            justify-content: center;
+            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 98%;
+            margin-left: 2.5px;
+            border-top: 2px solid rgba(255, 255, 255, 0.5); /* Garis atas */
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Garis bawah */
+        }
+        .info-container div {
+             font-family: 'Poppins', serif;
+            padding: 8px;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 500;
+        }
+        .info-container div:nth-child(odd) {
+             font-family: 'Poppins', serif;
+            text-align: center;
+            padding-left: 0px;
+            font-weight: bold;
+            color: #fdd835;
+            border-right: 2px solid rgba(255, 255, 255, 0.5); /* Garis tengah */
+        }
+        .info-container div:nth-child(even) {
+            text-align: center;
+            padding-right: 0px;
+        }
+        .info-container div:not(:nth-last-child(-n+2)) {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Garis antar data */
+        }
+.buttons {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+            gap: 10px;
+        }
+        .btn {
+            -webkit-tap-highlight-color: transparent;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #e91e63;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.1s;
+            font-weight: 800;
+        }
+        .btn:hover {
+            background-color: #e91e63;
+        }
+        .btn:disabled {
+            background: #c2185b;
+            cursor: not-allowed;
+        }
+
+    h4 {
+        margin-bottom: 0px;
+        margin-top: 8px;
+         font-family: 'Poppins', serif !important;
+        font-weight: 550;
+        font-size: 19px;
+        line-height: 1.2;
+    }
+    p, span {
+         font-family: 'Poppins', serif;
+    }
+   .left {
+    animation: slideLeft 0.8s ease forwards;
+}
+
+.right {
+    animation: slideRight 0.8s ease forwards;
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+        .logo {
+            border: 3px solid rgba(100, 100, 120, 1);
+            pointer-events: none;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            margin-bottom: -20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 1s linear;
+        }
+     .logo2 {
+            border: 3px solid rgba(100, 100, 120, 1);
+            pointer-events: none;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            margin-bottom: -20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 1s linear;
+            animation: spin 59s linear infinite;
+        }
+        .rotate {
+            animation: spin 59s linear infinite;
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(720deg);
+            }
+            
+        }
+  .fade-in-scale {
+    animation: fadeInScale 0.2s ease forwards;
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .fade-out {
+    animation: fadeOut 0.2s ease forwards;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+        h4 {
+            margin-bottom: 20px;
+            color: #444;
+        }
+    a {
+        -webkit-tap-highlight-color: transparent;
+        border-bottom: 0px solid #fff;
+        display: inline-block;
+        font-family: 'Poppins', serif;
+            padding: 0px;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 500;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    </style>
+</head>
+
+<body translate="no">
+   <div class="container">
+        <img src="avatar.png" class="logo" id="logo">
+        
+        <h3>@azkaarrodhi</h3>
+        <h4>Welcome to my profile!</h4>
+        
+        <div class="info-container">
+            <div><p class="right">Nama :</p></div> <div><p class="left">M. Azka Arrodhi</p></div>
+            <div><p class="right">Usia :</p></div> <div><p class="left"><span id="umur"></span> tahun</p></p></div>
+            <div><p class="right">Birth date :</p></div> <div><p class="left">05/05/2011</p></div>
+            <div><p class="right">Whatsapp :</p></div> <div><p class="left"><a href="https://wa.me/6282142909096" oncontextmenu="return false;">Chat Saya</a></p></div>
+        </div>
+
+        <audio id="audio" src="SnapTik.Net_7420940218611666182.mp3"></audio>
+        
+        <div class="buttons">
+            <button class="btn" id="playButton" onclick="playSound()">
+                <i class="fa fa-play" aria-hidden="true"></i> Click!
+            </button>
+        </div>
+    </div>
+<script>
+  function playSound() {
+    var audio = document.getElementById("audio");
+    var playButton = document.getElementById("playButton");
+    var logo = document.getElementById("logo");
+
+    playButton.disabled = true; // Nonaktifkan tombol selama 59 detik
+
+    // 1. Fade-out sebelum ganti gambar
+    logo.classList.add("fade-out");
+    setTimeout(() => {
+        logo.src = "1739611328541.jpg"; // Ganti ke gambar kedua
+        logo.classList.remove("fade-out"); // Hapus efek fade-out
+        logo.classList.add("fade-in-scale"); // Efek fade-in
+
+        // 2. Setelah gambar berubah, mulai rotasi & putar musik
+        setTimeout(() => {
+            logo.className = "logo2"; // Mulai rotasi
+        }, 400);
+
+        audio.play(); // Putar audio
+    }, 300); // Ganti gambar setelah 0.3 detik
+
+    // 3. Hentikan rotasi setelah 59 detik
+    setTimeout(() => {
+        logo.className = "logo"; // Hentikan rotasi
+
+        // 4. Tambahkan jeda 500ms sebelum fade-out dan kembali ke gambar awal
+        setTimeout(() => {
+            logo.classList.add("fade-out"); // Fade-out sebelum kembali ke gambar awal
+            setTimeout(() => {
+                logo.src = "avatar.png"; // Kembalikan gambar awal
+                logo.classList.remove("fade-out"); // Hapus fade-out
+                logo.classList.add("fade-in-scale"); // Tambahkan efek fade-in scale
+            }, 300);
+        }, 700); // Jeda 500ms sebelum fade-out
+
+        playButton.disabled = false; // Aktifkan tombol kembali setelah 59 detik
+    }, 59600);
+}
+</script>
+
+<style>
+  
+</style>
+
+
+<script>
+  function updateIP() {
+    fetch('https://api64.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('ip').textContent = data.ip;
+      })
+      .catch(error => console.error('Gagal mengambil alamat IP:', error));
+  }
+
+  setInterval(updateIP, 100); // Perbarui setiap 10 milidetik
+  updateIP(); // Jalankan pertama kali
+</script>
+ <script>
+function hitungUmur() {
+    const tahunLahir = new Date().getFullYear() - 13;
+    const ulangTahun = new Date(new Date().getFullYear(), 4, 5);
+    const hariIni = new Date();
+
+    let umur = hariIni.getFullYear() - tahunLahir;
+
+    if (hariIni >= ulangTahun) {
+        umur++;
+    }
+
+    return umur;
+}
+
+function updateUmur() {
+    document.getElementById("umur").innerText = hitungUmur();
+}
+
+// Perbarui setiap detik
+document.addEventListener("DOMContentLoaded", function () {
+    updateUmur(); // Setel pertama kali
+    setInterval(updateUmur, 1);
+});
+</script>
+</body>
+</html>
