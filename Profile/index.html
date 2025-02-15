@@ -262,7 +262,7 @@
 
 <body translate="no">
    <div class="container">
-        <img src="avatar.png" class="logo" id="logo">
+        <img src="Profile/avatar.png" class="logo" id="logo">
         
         <h3>@azkaarrodhi</h3>
         <h4>Welcome to my profile!</h4>
@@ -274,7 +274,7 @@
             <div><p class="right">Whatsapp :</p></div> <div><p class="left"><a href="https://wa.me/6282142909096" oncontextmenu="return false;">Chat Saya</a></p></div>
         </div>
 
-        <audio id="audio" src="SnapTik.Net_7420940218611666182.mp3"></audio>
+        <audio id="audio" src="Profile/SnapTik.Net_7420940218611666182.mp3"></audio>
         
         <div class="buttons">
             <button class="btn" id="playButton" onclick="playSound()">
@@ -293,7 +293,7 @@
     // 1. Fade-out sebelum ganti gambar
     logo.classList.add("fade-out");
     setTimeout(() => {
-        logo.src = "1739611328541.jpg"; // Ganti ke gambar kedua
+        logo.src = "Profile/1739611328541.jpg"; // Ganti ke gambar kedua
         logo.classList.remove("fade-out"); // Hapus efek fade-out
         logo.classList.add("fade-in-scale"); // Efek fade-in
 
@@ -313,7 +313,7 @@
         setTimeout(() => {
             logo.classList.add("fade-out"); // Fade-out sebelum kembali ke gambar awal
             setTimeout(() => {
-                logo.src = "avatar.png"; // Kembalikan gambar awal
+                logo.src = "Profile/avatar.png"; // Kembalikan gambar awal
                 logo.classList.remove("fade-out"); // Hapus fade-out
                 logo.classList.add("fade-in-scale"); // Tambahkan efek fade-in scale
             }, 300);
