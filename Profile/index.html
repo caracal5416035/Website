@@ -303,7 +303,7 @@
         }, 400);
 
         audio.play(); // Putar audio
-    }, 0); // Ganti gambar setelah 0.3 detik
+    }, 300); // Ganti gambar setelah 0.3 detik
 
     // 3. Hentikan rotasi setelah 59 detik
     setTimeout(() => {
@@ -316,7 +316,7 @@
                 logo.src = "Profile/avatar.png"; // Kembalikan gambar awal
                 logo.classList.remove("fade-out"); // Hapus fade-out
                 logo.classList.add("fade-in-scale"); // Tambahkan efek fade-in scale
-            }, 0);
+            }, 300);
         }, 700); // Jeda 500ms sebelum fade-out
 
         playButton.disabled = false; // Aktifkan tombol kembali setelah 59 detik
