@@ -43,7 +43,7 @@
         }
         h3 {
             
-            font-size: 15.4px;
+            font-size: 15px;
             margin-top: 25px;
             margin-bottom: 5px;
             color: #e91e63;
@@ -206,12 +206,12 @@
                 transform: rotate(0deg);
             }
             to {
-                transform: rotate(700deg);
+                transform: rotate(720deg);
             }
             
         }
   .fade-in-scale {
-    animation: fadeInScale 0.3s ease forwards;
+    animation: fadeInScale 0.2s ease forwards;
   }
 
   @keyframes fadeInScale {
@@ -226,7 +226,7 @@
   }
 
   .fade-out {
-    animation: fadeOut 0.4s ease forwards;
+    animation: fadeOut 0.2s ease forwards;
   }
 
   @keyframes fadeOut {
@@ -262,7 +262,7 @@
 
 <body translate="no">
    <div class="container">
-        <img src="Profile/avatar.png" class="logo" id="logo">
+        <img src="Profile/pp.png" class="logo" id="logo">
         
         <h3>@azkaarrodhi</h3>
         <h4>Welcome to my profile!</h4>
@@ -271,10 +271,10 @@
             <div><p class="right">Nama :</p></div> <div><p class="left">M. Azka Arrodhi</p></div>
             <div><p class="right">Usia :</p></div> <div><p class="left"><span id="umur"></span> tahun</p></p></div>
             <div><p class="right">Birth date :</p></div> <div><p class="left">05/05/2011</p></div>
-            <div><p class="right">Whatsapp :</p></div> <div><p class="left"><a href="https://wa.me/6282142909096" oncontextmenu="return false;">Chat Saya</a></p></div>
+            <div><p class="right">NGL. link:</p></div> <div><p class="left"><a href="https://ngl.link/azka36643" oncontextmenu="return false;">kirim pesan</a></p></div>
         </div>
 
-        <audio id="audio" src="Profile/lv_0_20250216083613.mp3"></audio>
+        <audio id="audio" src="Profile/SnapTik.Net_7420940218611666182.mp3"></audio>
         
         <div class="buttons">
             <button class="btn" id="playButton" onclick="playSound()">
@@ -283,51 +283,67 @@
         </div>
     </div>
 <script>
-  function playSound() {
-    var audio = document.getElementById("audio");
-    var playButton = document.getElementById("playButton");
-    var logo = document.getElementById("logo");
+  const playButton = document.getElementById("playButton");
+const logo = document.getElementById("logo");
+const audio = document.getElementById("audio");
 
+// Deteksi tombol Space untuk klik tombol
+document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") { 
+        event.preventDefault(); 
+        if (!playButton.disabled) { 
+            playButton.click();
+        }
+    }
+});
+
+// Observasi perubahan status disabled
+const observer = new MutationObserver(() => {
+    if (playButton.disabled) {
+        playButton.innerHTML = "&#129323;&#129323;&#129323;"; 
+    } else {
+        playButton.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i> Click!'; 
+    }
+});
+observer.observe(playButton, { attributes: true, attributeFilter: ["disabled"] });
+
+// Fungsi playSound untuk animasi & musik
+function playSound() {
     playButton.disabled = true; // Nonaktifkan tombol selama 59 detik
 
     // 1. Fade-out sebelum ganti gambar
     logo.classList.add("fade-out");
     setTimeout(() => {
-        logo.src = "Profile/1739607025145.jpg"; // Ganti ke gambar kedua
-        logo.classList.remove("fade-out"); // Hapus efek fade-out
-        logo.classList.add("fade-in-scale"); // Efek fade-in
+        logo.src = "Profile/1739674320929.jpg"; 
+        logo.classList.remove("fade-out"); 
+        logo.classList.add("fade-in-scale"); 
 
-        // 2. Setelah gambar berubah, mulai rotasi & putar musik
+        // 2. Mulai rotasi & putar musik
         setTimeout(() => {
-            logo.className = "logo2"; // Mulai rotasi
+            logo.className = "logo2"; 
         }, 400);
 
-        audio.play(); // Putar audio
-    }, 300); // Ganti gambar setelah 0.3 detik
+        audio.play(); 
+    }, 300);
 
     // 3. Hentikan rotasi setelah 59 detik
     setTimeout(() => {
-        logo.className = "logo"; // Hentikan rotasi
+        logo.className = "logo"; 
 
-        // 4. Tambahkan jeda 500ms sebelum fade-out dan kembali ke gambar awal
+        // 4. Tambahkan jeda sebelum kembali ke gambar awal
         setTimeout(() => {
-            logo.classList.add("fade-out"); // Fade-out sebelum kembali ke gambar awal
+            logo.classList.add("fade-out"); 
             setTimeout(() => {
-                logo.src = "Profile/avatar.png"; // Kembalikan gambar awal
-                logo.classList.remove("fade-out"); // Hapus fade-out
-                logo.classList.add("fade-in-scale"); // Tambahkan efek fade-in scale
+                logo.src = "Profile/pp.png"; 
+                logo.classList.remove("fade-out"); 
+                logo.classList.add("fade-in-scale"); 
             }, 300);
-        }, 700); // Jeda 500ms sebelum fade-out
+        }, 700);
 
-        playButton.disabled = false; // Aktifkan tombol kembali setelah 59 detik
-    }, 60000);
+        playButton.disabled = false; 
+    }, 59600);
 }
 </script>
-
-<style>
-  
-</style>
-
 
 <script>
   function updateIP() {
@@ -341,6 +357,11 @@
 
   setInterval(updateIP, 100); // Perbarui setiap 10 milidetik
   updateIP(); // Jalankan pertama kali
+</script>
+<script>
+document.addEventListener('dragstart', function(event) {
+  event.preventDefault();
+});
 </script>
  <script>
 function hitungUmur() {
