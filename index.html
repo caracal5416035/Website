@@ -449,21 +449,21 @@ margin: 0; /* Menghilangkan margin default */
 <script>
   const now = new Date();
   const hour = now.getHours();
-  let sapaan = '';
+  let sapaan = "";
 
   if (hour >= 4 && hour <= 10) {
-    sapaan = 'Halo, Azka! Selamat Pagi!';
+    sapaan = "Halo, Azka! Selamat Pagi!";
   } else if (hour > 10 && hour <= 15) {
-    sapaan = 'Halo, Azka! Selamat Siang!';
+    sapaan = "Halo, Azka! Selamat Siang!";
   } else if (hour > 15 && hour <= 18) {
-    sapaan = 'Halo, Azka! Selamat Sore!';
+    sapaan = "Halo, Azka! Selamat Sore!";
   } else {
-    sapaan = 'Halo, Azka! Selamat Malam!';
+    sapaan = "Halo, Azka! Selamat Malam!";
   }
 
   const encodedMessage = encodeURIComponent(sapaan);
   const link = `https://wa.me/6282142909096?text=${encodedMessage}`;
-  document.getElementById('whatsapp-link').setAttribute('href', link);
+  document.getElementById("whatsapp-link").setAttribute("href", link);
 </script>
             </div>
       
