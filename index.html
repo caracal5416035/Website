@@ -434,7 +434,7 @@ margin: 0; /* Menghilangkan margin default */
                      
                
                           
-<a title="Link to my whatsapp"  target="_blank" href="https://wa.me/6282142909096?text=Halo,%20Azka!" class="Scale(1.1):h">
+<a title="Link to my whatsapp"  target="_blank" id="whatsapp-link" class="Scale(1.1):h">
                 <svg class="ss-icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 418.135 418.135">
                   <path
                     fill="#000000"
@@ -446,7 +446,25 @@ margin: 0; /* Menghilangkan margin default */
                   ></path>
                 </svg>
               </a>
+<script>
+  const now = new Date();
+  const hour = now.getHours();
+  let sapaan = '';
 
+  if (hour >= 4 && hour <= 10) {
+    sapaan = 'Halo, Azka! Selamat Pagi!';
+  } else if (hour > 10 && hour <= 15) {
+    sapaan = 'Halo, Azka! Selamat Siang!';
+  } else if (hour > 15 && hour <= 18) {
+    sapaan = 'Halo, Azka! Selamat Sore!';
+  } else {
+    sapaan = 'Halo, Azka! Selamat Malam!';
+  }
+
+  const encodedMessage = encodeURIComponent(sapaan);
+  const link = `https://wa.me/6282142909096?text=${encodedMessage}`;
+  document.getElementById('whatsapp-link').setAttribute('href', link);
+</script>
             </div>
       
           <!-- Social Links end -->
