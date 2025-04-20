@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pemutar Lagu Stylish</title>
+  <style>
+    body {
+      user-select: none;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .player-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 300px;
+    }
+
+    .player-container h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    button {
+      -webkit-tap-highlight-color: transparent;
+      background-color: #1abc9c;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    button:hover {
+      background-color: #16a085;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="player-container">
+<h2 id="nowPlaying" style="margin-top: 10px;">Audio Player</h2>
+    <button onclick="playSongs()">Putar Lagu</button>
+    <audio id="audioPlayer" controls></audio>
+ 
+  </div>
+
+  <script>
+    const songs = [
+      'karna su sayang.mp3',
+      'cinderlla.mp3',
+      'karena kamu.mp3',
+      'singkong dan keju.mp3',
+      'rungkad.mp3',
+      'pecah seribu.mp3',
+      'satu rasa cinta.mp3',
+      'semata karenamu.mp3',
+      'runtah.mp3'
+    ]; // Ganti nama file sesuai koleksi kamu
+
+    let currentSongIndex = 0;
+    const audioPlayer = document.getElementById('audioPlayer');
+    const nowPlaying = document.getElementById('nowPlaying');
+
+    function playSongs() {
+      if (currentSongIndex < songs.length) {
+        audioPlayer.src = songs[currentSongIndex];
+        audioPlayer.play();
+        nowPlaying.textContent = songs[currentSongIndex];
+      }
+    }
+
+    audioPlayer.addEventListener('ended', () => {
+      currentSongIndex++;
+      if (currentSongIndex < songs.length) {
+        audioPlayer.src = songs[currentSongIndex];
+        audioPlayer.play();
+        nowPlaying.textContent = songs[currentSongIndex];
+      } else {
+        nowPlaying.textContent = "Semua lagu sudah diputar.";
+      }
+    });
+  </script>
+</body>
+</html>
