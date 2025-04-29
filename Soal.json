@@ -1,0 +1,93 @@
+{
+  "1": {
+    "pertanyaan": "Apa ibu kota Indonesia?",
+    "opsi": ["Jakarta", "Bandung", "Surabaya", "Medan"],
+    "jawaban": "Jakarta"
+  },
+  "2": {
+    "pertanyaan": "Berapakah hasil dari 5 × 2?",
+    "opsi": ["10", "7", "12", "5"],
+    "jawaban": "10"
+  },
+  "3": {
+    "pertanyaan": "Planet terdekat dari matahari?",
+    "opsi": ["Bumi", "Mars", "Merkurius", "Venus"],
+    "jawaban": "Merkurius"
+  },
+  "4": {
+    "pertanyaan": "Bahasa resmi Indonesia?",
+    "opsi": ["Jawa", "Sunda", "Indonesia", "Melayu"],
+    "jawaban": "Indonesia"
+  },
+  "5": {
+    "pertanyaan": "Hari kemerdekaan Indonesia?",
+    "opsi": ["17 Agustus 1945", "10 November 1945", "1 Juni 1945", "20 Mei 1908"],
+    "jawaban": "17 Agustus 1945"
+  },
+  "6": {
+    "pertanyaan": "Warna primer yang benar?",
+    "opsi": ["Merah, Kuning, Biru", "Hijau, Merah, Putih", "Biru, Hitam, Kuning", "Merah, Hijau, Biru"],
+    "jawaban": "Merah, Kuning, Biru"
+  },
+  "7": {
+    "pertanyaan": "Nama presiden pertama Indonesia?",
+    "opsi": ["Sukarno", "Soeharto", "Habibie", "Jokowi"],
+    "jawaban": "Sukarno"
+  },
+  "8": {
+    "pertanyaan": "Organ untuk bernapas?",
+    "opsi": ["Paru-paru", "Hati", "Ginjal", "Lambung"],
+    "jawaban": "Paru-paru"
+  },
+  "9": {
+    "pertanyaan": "Ibu kota Jawa Tengah?",
+    "opsi": ["Semarang", "Solo", "Yogyakarta", "Magelang"],
+    "jawaban": "Semarang"
+  },
+  "10": {
+    "pertanyaan": "Lambang negara Indonesia?",
+    "opsi": ["Garuda Pancasila", "Padi dan Kapas", "Bendera Merah Putih", "Burung Merak"],
+    "jawaban": "Garuda Pancasila"
+  },
+
+  "11": {
+    "pertanyaan": "Siapa penemu bola lampu?",
+    "jawaban": "Thomas Edison"
+  },
+  "12": {
+    "pertanyaan": "Berapakah hasil dari 12 + 8?",
+    "jawaban": "20"
+  },
+  "13": {
+    "pertanyaan": "Apa satuan arus listrik?",
+    "jawaban": "Ampere"
+  },
+  "14": {
+    "pertanyaan": "Ibukota negara Jepang?",
+    "jawaban": "Tokyo"
+  },
+  "15": {
+    "pertanyaan": "Berapa jumlah provinsi di Indonesia (2024)?",
+    "jawaban": "38"
+  },
+  "16": {
+    "pertanyaan": "Siapa presiden Indonesia saat ini?",
+    "jawaban": "Joko Widodo"
+  },
+  "17": {
+    "pertanyaan": "Apa nama pulau terbesar di Indonesia?",
+    "jawaban": "Papua"
+  },
+  "18": {
+    "pertanyaan": "Apa unsur kimia dengan simbol O?",
+    "jawaban": "Oksigen"
+  },
+  "19": {
+    "pertanyaan": "Apa hasil dari 9 x 9?",
+    "jawaban": "81"
+  },
+  "20": {
+    "pertanyaan": "Siapa pahlawan nasional wanita dari Aceh?",
+    "jawaban": "Cut Nyak Dien"
+  }
+}
