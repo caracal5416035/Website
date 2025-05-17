@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
+  <meta name="theme-color" content="#232323">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>404 Not Found</title>
@@ -20,7 +21,7 @@
     overflow: hidden;
   }
 
-  /* Animated gradient background */
+  /* Subtle slow gradient background */
   body::before {
     content: "";
     position: fixed;
@@ -30,17 +31,17 @@
     height: 200%;
     background: linear-gradient(270deg, #ff3c78, #8250ff, #3adced, #ff3c78);
     background-size: 800% 800%;
-    animation: gradientShift 20s ease infinite;
-    filter: blur(100px);
-    opacity: 0.6;
+    animation: gradientShift 60s linear infinite;
+    filter: blur(80px);
+    opacity: 0.5;
     z-index: -2;
     border-radius: 50%;
+    will-change: background-position;
   }
 
   @keyframes gradientShift {
     0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+    100%{background-position:100% 50%;}
   }
 
   .container {
@@ -48,16 +49,17 @@
     z-index: 1;
     max-width: 480px;
     margin: 0 auto;
-    height: 100vh;
+    min-height: 100vh;
+
+    /* Align content top and horizontally center */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
     text-align: center;
+    padding: 1rem 20px 20px 20px;
   }
 
-  /* Glitch effect on 404 */
+  /* Glitch effect using opacity and translateX only */
   .error-code {
     font-size: 12rem;
     font-weight: 900;
@@ -65,67 +67,47 @@
     position: relative;
     letter-spacing: 0.15em;
     user-select: none;
-    animation: glitch 2.5s infinite;
+    will-change: transform, opacity;
+    animation: glitchBase 3s linear infinite;
+    line-height: 1;
   }
   .error-code::before,
   .error-code::after {
     content: "404";
     position: absolute;
     left: 0;
+    top: 0;
     right: 0;
-    opacity: 0.8;
+    color: inherit;
+    user-select: none;
+    pointer-events: none;
+    will-change: transform, opacity;
   }
   .error-code::before {
-    animation: glitchTop 2.5s infinite;
     color: #3adced;
     z-index: -1;
-    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    animation: glitchBlue 3s linear infinite;
   }
   .error-code::after {
-    animation: glitchBottom 2.5s infinite;
     color: #ffa1c7;
     z-index: -1;
-    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    animation: glitchPink 3s linear infinite;
   }
 
-  @keyframes glitch {
-    0%, 100% {
-      transform: translate(0);
-    }
-    20%, 60% {
-      transform: translate(-3px, 2px);
-    }
-    40%, 80% {
-      transform: translate(3px, -2px);
-    }
+  @keyframes glitchBase {
+    0%, 100% { transform: translate3d(0,0,0); opacity: 1; }
+    20%, 60% { transform: translate3d(-2px, 1px, 0); opacity: 0.9;}
+    40%, 80% { transform: translate3d(2px, -1px, 0); opacity: 0.9;}
   }
-  @keyframes glitchTop {
-    0%, 100% {
-      clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-      transform: translate(0);
-    }
-    20%, 60% {
-      clip-path: polygon(0 0, 100% 0, 80% 45%, 0 45%);
-      transform: translate(-5px, -5px);
-    }
-    40%, 80% {
-      clip-path: polygon(0 0, 100% 0, 100% 45%, 10% 45%);
-      transform: translate(5px, 5px);
-    }
+  @keyframes glitchBlue {
+    0%, 100% { transform: translate3d(0,0,0); opacity: 0.7; }
+    25%, 75% { transform: translate3d(-3px, -2px, 0); opacity: 0.4; }
+    50% { transform: translate3d(3px, 2px, 0); opacity: 0.4; }
   }
-  @keyframes glitchBottom {
-    0%, 100% {
-      clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-      transform: translate(0);
-    }
-    20%, 60% {
-      clip-path: polygon(20% 55%, 100% 55%, 100% 100%, 0 100%);
-      transform: translate(5px, 5px);
-    }
-    40%, 80% {
-      clip-path: polygon(0 55%, 80% 55%, 100% 100%, 20% 100%);
-      transform: translate(-5px, -5px);
-    }
+  @keyframes glitchPink {
+    0%, 100% { transform: translate3d(0,0,0); opacity: 0.7; }
+    25%, 75% { transform: translate3d(3px, 2px, 0); opacity: 0.4; }
+    50% { transform: translate3d(-3px, -2px, 0); opacity: 0.4; }
   }
 
   .error-message {
@@ -136,6 +118,7 @@
     opacity: 0;
     animation: fadeIn 1.2s ease forwards;
     animation-delay: 1.5s;
+    will-change: opacity;
   }
   .error-submessage {
     font-size: 1rem;
@@ -145,6 +128,7 @@
     opacity: 0;
     animation: fadeIn 1.2s ease forwards;
     animation-delay: 1.7s;
+    will-change: opacity;
   }
 
   @keyframes fadeIn {
@@ -206,34 +190,35 @@
     height: 10px;
     background: #ff3c78;
     border-radius: 50%;
-    opacity: 0.15;
+    opacity: 0.12;
     animation: floatUpDown ease-in-out infinite;
+    will-change: transform, opacity;
   }
   .dot:nth-child(1) {
     left: 15%;
     top: 80%;
-    animation-duration: 6s;
+    animation-duration: 12s;
     animation-delay: 0s;
   }
   .dot:nth-child(2) {
     left: 30%;
     top: 50%;
-    animation-duration: 8s;
+    animation-duration: 15s;
     animation-delay: 2s;
     width: 14px;
     height: 14px;
-    opacity: 0.2;
+    opacity: 0.18;
   }
   .dot:nth-child(3) {
     left: 55%;
     top: 85%;
-    animation-duration: 7s;
+    animation-duration: 14s;
     animation-delay: 1s;
   }
   .dot:nth-child(4) {
     left: 70%;
     top: 60%;
-    animation-duration: 5s;
+    animation-duration: 11s;
     animation-delay: 0.5s;
     width: 8px;
     height: 8px;
@@ -241,16 +226,16 @@
   .dot:nth-child(5) {
     left: 85%;
     top: 75%;
-    animation-duration: 9s;
+    animation-duration: 16s;
     animation-delay: 3s;
   }
   @keyframes floatUpDown {
     0%, 100% {
       transform: translateY(0);
-      opacity: 0.15;
+      opacity: 0.12;
     }
     50% {
-      transform: translateY(-20px);
+      transform: translateY(-10px);
       opacity: 0.3;
     }
   }
@@ -262,10 +247,10 @@
     }
     .error-message {
       font-size: 1.3rem;
-      max-width: 270px;
+      max-width: 100%;
     }
     .error-submessage {
-      max-width: 250px;
+      max-width: 100%;
     }
     .home-button {
       font-size: 1rem;
@@ -274,7 +259,7 @@
   }
 </style>
 </head>
-<body>
+<body translate="no">
   <div class="container" role="main" aria-labelledby="error-title" aria-describedby="error-desc">
     <h1 class="error-code" id="error-title" aria-label="404 Not Found">404</h1>
     <p class="error-message" id="error-desc">Oops! The page you are looking for cannot be found.</p>
